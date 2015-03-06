@@ -78,6 +78,13 @@
 .method public static final bridge varargs declared-synchronized synthetic $onCreate(Landroid/app/Activity;)V
 .end method
 
+.method testParameterAnnotation()V
+    .param p0
+        .annotation runtime LParameterAnnotation;
+        .end annotation
+    .end param
+.end method
+
 .method private testArrays()V
   fill-array-data v0, :array_0
 
@@ -433,7 +440,7 @@
 .method private test_22s()V
   # Test Coverage - op vA, vB, #+CCCC
   add-int/lit16 v0,v0,-0x8000 # test
-  rsub-int/lit16 v0, v0, 0x7fff
+  rsub-int v0, v0, 0x7fff # no suffix since this is main version of opcode
   mul-int/lit16 v0, v0, 0x1
   div-int/lit16 v255, v255, -0x1
   rem-int/lit16 v0, v0, 0x0
